@@ -1,4 +1,5 @@
-# NOTE: Only the 8 basic terminal colors are used to ensure TTY compatibility. If more advanced colors are used such as 256, the colors will not be applied in TTY.
+# NOTE: Only the 8 basic terminal colors are used to ensure TTY compatibility. If more advanced colors are used such as 256, 
+#     the colors will not be applied in TTY.
 # If you want to edit, def recommend associating '*.zsh-theme' file extension with bash syntax highlighting in your editor
 
 # Define ANSI color codes
@@ -9,17 +10,16 @@ mgnta="%b%F{magenta}"
 yellow="%B%F{yellow}"
 reset="%b%f"
 
-
 # Function to get the relative path starting at local repo directory
-git_rel_path() {
+function git_rel_path() {
   # Get the root path of the repo
   local root=$(git rev-parse --show-toplevel 2> /dev/null)
   
   if [[ -n $root ]]; then
-    # Extract the repository directory name
+    # Extract the repo directory name
     local repo_dir=$(basename "$root")
     
-    # Replace the root path with the repository directory name
+    # Replace the root path with the repo directory name
     local relative_path=${PWD/$root/$repo_dir}
     
     # Trim leading slash if present
@@ -41,9 +41,3 @@ else echo "${blue}┌─(%n@%m)──[${grey}%~${blue}]"; fi)
 PS2=' %B~%b '
 
 # Color code list: https://robotmoon.com/256-colors/
-
-# ${blue}┌─(%n@%m)──[${grey}%~${blue}]
-
-# PS1='${blue}┌─(%n@%m)──[${grey}%~${blue}]
-# └$(branch=$(git_current_branch); path=$(git_rel_path); \
-# [ -n "${branch}" ] && echo "${blue}git:${green}${branch}${path}${blue}─")${reset}%B$%b '
