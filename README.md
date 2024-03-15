@@ -1,5 +1,5 @@
-**<div align="center"><h1>🦐  BigShrimp</h1></div>**
-_<div align="center"><h4>A Shrimple and concise terminal prompt theme for Oh My Zsh</h4></div>_<br>
+**<div align="center"><h2>🦐  BigShrimp</h2></div>**
+_<div align="center"><h5>A Shrimple and concise terminal prompt theme for Oh My Zsh</h5></div>_<br>
 
 - Clear and concise
 - Displays properly in TTY
