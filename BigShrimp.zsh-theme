@@ -3,12 +3,12 @@
 # If you want to edit, def recommend associating '*.zsh-theme' file extension with bash syntax highlighting in your editor
 
 # Define ANSI color codes
-local blue="%B%F{blue}"
-local green="%b%F{green}"
-local grey="%B%F{black}"
-local mgnta="%b%F{magenta}"
-local yellow="%B%F{yellow}"
-local reset="%b%f"
+blue="%B%F{blue}"
+green="%b%F{green}"
+grey="%B%F{black}"
+mgnta="%b%F{magenta}"
+yellow="%B%F{yellow}"
+reset="%b%f"
 
 # Function to get the relative path starting at local repo directory
 function git_rel_path() {
