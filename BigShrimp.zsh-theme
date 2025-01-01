@@ -3,11 +3,12 @@
 # If you want to edit, def recommend associating '*.zsh-theme' file extension with bash syntax highlighting in your editor
 
 # Define ANSI color codes
-blue="%B%F{blue}"
-green="%b%F{green}"
-grey="%B%F{black}"
-mgnta="%b%F{magenta}"
-yellow="%B%F{yellow}"
+blue="%F{blue}"
+cyan="%F{cyan}"
+green="%F{green}"
+grey="%F{black}"
+mgnta="%F{magenta}"
+yellow="%F{yellow}"
 reset="%b%f"
 
 # Function to get the relative path starting at local repo directory
@@ -31,13 +32,20 @@ function git_rel_path() {
   fi
 }
 
-# PS1
-PS1='$(branch=$(git_current_branch); path=$(git_rel_path); \
-if [ -n "${branch}" ]; then echo "${blue}┌─(%n@%m)──[git:${green}${branch}${grey}/${path}${blue}]"; \
-else echo "${blue}┌─(%n@%m)──[${grey}%~${blue}]"; fi)
-└${reset}%B$%b '
+# Function to integrate venv indicator when activating python virtual environment.
+# Recommend disabling the global one with 'export VIRTUAL_ENV_DISABLE_PROMPT=1'
+function venv_name() {
+  if [[ -n $VIRTUAL_ENV ]]; then
+    echo -n "${cyan}─<$(basename "${VIRTUAL_ENV}")>─"
+  else
+    echo -n ""
+  fi
+}
 
+# PS1
+PS1='$(venv=$(venv_name); branch=$(git_current_branch); path=$(git_rel_path); \
+if [ -n "${branch}" ]; then echo "${green}┌─(${blue}%n@%m${green})${venv} ${yellow}git${blue}:${branch}${reset}/${path}${green}"; \
+else echo "${green}┌─(${blue}%n@%m${green})${venv} ${reset}%~${green}"; fi)
+└${reset}%B$%b '
 # PS2
 PS2=' %B~%b '
-
-# Color code list: https://robotmoon.com/256-colors/
