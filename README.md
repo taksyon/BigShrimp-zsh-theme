@@ -6,6 +6,9 @@ _<div align="center"><h5>A Shrimple and concise terminal prompt theme for Oh My 
 - Git info/path combined with custom function to reduce clutter
 - Easy and readable theme file so you can edit to your liking<br><br><br>
 ![term-prompt-ex](https://github.com/taksyon/oh-my-zsh-theme/assets/131212515/f7e850d0-29dd-4eb5-91f4-6e063a3ec69e)<br><br><br>
+- Now with true-color + TTY support!<br><br><br>
+![image](https://github.com/user-attachments/assets/4ba6a475-2dee-4e2b-b003-2cbbb62750d2)<br><br><br>
+
 
 ### **Installation** <br>
 1. Download _'BigShrimp.zsh-theme'_ from this repository, and move it into _~/.oh-my-zsh/custom/themes/_
